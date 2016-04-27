@@ -2,59 +2,57 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include"file.h"
-#include"student.h"
+#include"player.h"
 
-void printHead( )      /*´òÓ¡Ñ§ÉúĞÅÏ¢µÄ±íÍ·*/
+void printHead( )      /*´òÓ¡ÇòÔ±ĞÅÏ¢µÄ±íÍ·*/
 {
-printf("%8s%10s%8s%6s%6s%8s%6s%6s\n","Ñ§ºÅ","ĞÕÃû","ĞÔ±ğ","ÊıÑ§","Ó¢Óï","¼ÆËã»ú","×Ü·Ö","Ãû´Î");
+printf("%3d%8s%2d%2d%2d%2%2d%2d\n","ÇòÔ±ºÅÂë","ĞÕÃû","µÃ·Ö","Öú¹¥","Àº°å","ÇÀ¶Ï","Ê§Îó","Ãû´Î");
 }
 
 void menu( )         /*¶¥²ã²Ëµ¥º¯Êı*/
 {
 		printf("******** 1. ÏÔÊ¾»ù±¾ĞÅÏ¢ ********\n");
 		printf("******** 2. »ù±¾ĞÅÏ¢¹ÜÀí ********\n");
-		printf("******** 3. Ñ§Éú³É¼¨¹ÜÀí ********\n");
-		printf("******** 4. ¿¼ÊÔ³É¼¨Í³¼Æ ********\n");
+		printf("******** 3. ÇòÔ±Êı¾İ¹ÜÀí ********\n");
+		printf("******** 4. ±ÈÈüµÃ·ÖÍ³¼Æ ********\n");
      printf("******** 5. ¸ù¾İÌõ¼ş²éÑ¯ ********\n");
 		printf("******** 0. ÍË³ö         ********\n");
 }
 
 void menuBase( )     /*2¡¢»ù±¾ĞÅÏ¢¹ÜÀí²Ëµ¥º¯Êı*/
 {
-		printf("%%%%%%%% 1. ²åÈëÑ§Éú¼ÇÂ¼ %%%%%%%%\n");
-		printf("%%%%%%%% 2. É¾³ıÑ§Éú¼ÇÂ¼ %%%%%%%%\n");
-		printf("%%%%%%%% 3. ĞŞ¸ÄÑ§Éú¼ÇÂ¼ %%%%%%%%\n");
+		printf("%%%%%%%% 1. ²åÈëÇòÔ±¼ÇÂ¼ %%%%%%%%\n");
+		printf("%%%%%%%% 2. É¾³ıÇòÔ±¼ÇÂ¼ %%%%%%%%\n");
+		printf("%%%%%%%% 3. ĞŞ¸ÄÇòÔ±¼ÇÂ¼ %%%%%%%%\n");
 		printf("%%%%%%%% 0. ·µ»ØÉÏ²ã²Ëµ¥ %%%%%%%%\n");
 }
 
-void menuScore( )     /*3¡¢Ñ§Éú³É¼¨¹ÜÀí²Ëµ¥º¯Êı*/
+void menuScore( )     /*3¡¢ÇòÔ±Êı¾İ¹ÜÀí²Ëµ¥º¯Êı*/
 {
-		printf("@@@@@@@@ 1. ¼ÆËãÑ§Éú×Ü·Ö @@@@@@@@\n");
-		printf("@@@@@@@@ 2. ¸ù¾İ×Ü·ÖÅÅÃû @@@@@@@@\n");
+		printf("@@@@@@@@ 1. ¼ÆËãÇòÔ±×ÜµÃ·Ö @@@@@@@@\n");
+		printf("@@@@@@@@ 2. ¸ù¾İ×ÜµÃ·ÖÅÅÃû @@@@@@@@\n");
 		printf("@@@@@@@@ 0. ·µ»ØÉÏ²ã²Ëµ¥ @@@@@@@@\n");
 }
  
-void menuCount( )    /*4¡¢¿¼ÊÔ³É¼¨Í³¼Æ²Ëµ¥º¯Êı*/
+void menuCount( )    /*4¡¢±ÈÈüµÃ·ÖÍ³¼Æ²Ëµ¥º¯Êı*/
 {
-		printf("&&&&&&&& 1. Çó¿Î³Ì×î¸ß·Ö &&&&&&&&\n");
-		printf("&&&&&&&& 2. Çó¿Î³Ì×îµÍ·Ö &&&&&&&&\n");
-		printf("&&&&&&&& 3. Çó¿Î³ÌÆ½¾ù·Ö &&&&&&&&\n");
+		printf("&&&&&&&& 1. Çó×ÜµÃ·Ö×î¸ß·Ö &&&&&&&&\n");
+		printf("&&&&&&&& 2. Çó×ÜµÃ·Ö×îµÍ·Ö &&&&&&&&\n");
 		printf("&&&&&&&& 0. ·µ»ØÉÏ²ã²Ëµ¥ &&&&&&&&\n");
 }
 
 void menuSearch()    /*5¡¢¸ù¾İÌõ¼ş²éÑ¯²Ëµ¥º¯Êı*/
 {
-		printf("######## 1. °´Ñ§ºÅ²éÑ¯   ########\n");
-		printf("######## 2. °´ĞÕÃû²éÑ¯   ########\n");
-		printf("######## 3. °´Ãû´Î²éÑ¯   ########\n");
+		printf("######## 1. °´ĞÕÃû²éÑ¯   ########\n");
+		printf("######## 2. °´ÇòÒÂºÅÂë²éÑ¯   ########\n");
 		printf("######## 0. ·µ»ØÉÏ²ã²Ëµ¥ ########\n");
 }
 
-int baseManage(Student stu[],int n)    	     /*¸Ãº¯ÊıÍê³É»ù±¾ĞÅÏ¢¹ÜÀí*/
-/*°´Ñ§ºÅ½øĞĞ²åÈëÉ¾³ıĞŞ¸Ä£¬Ñ§ºÅ²»ÄÜÖØ¸´*/
+int baseManage(Player pla[],int n)    	     /*¸Ãº¯ÊıÍê³É»ù±¾ĞÅÏ¢¹ÜÀí*/
+/*°´Ñ§ºÅ½øĞĞ²åÈëÉ¾³ıĞŞ¸Ä£¬ÇòÒÂºÅÂë²»ÄÜÖØ¸´*/
 {  
 		int choice,t,find[NUM];
-     Student s;
+     Player s;
 do
 	    {   
 menuBase( );                  /*ÏÔÊ¾¶ÔÓ¦µÄ¶ş¼¶²Ëµ¥*/
@@ -62,23 +60,23 @@ printf("choose one operation you want to do:\n");
 		     scanf("%d",&choice);	          /*¶ÁÈëÑ¡Ïî*/
 		     switch(choice)
 		     {
-			   case 1:	 readStu(&s,1);       /*¶ÁÈëÒ»Ìõ´ı²åÈëµÄÑ§Éú¼ÇÂ¼*/
-					 n=insertStu(stu,n,s);   /*µ÷ÓÃº¯Êı²åÈëÑ§Éú¼ÇÂ¼*/
+			   case 1:	 readPla(&s,1);       /*¶ÁÈëÒ»Ìõ´ı²åÈëµÄÇòÔ±¼ÇÂ¼*/
+					 n=insertPla(pla,n,s);   /*µ÷ÓÃº¯Êı²åÈëÇòÔ±¼ÇÂ¼*/
 					 break;
 			   case 2:  printf("Input the number deleted\n");
-					 scanf("%ld",&s.num);  /*¶ÁÈëÒ»¸ö´ıÉ¾³ıµÄÑ§ÉúÑ§ºÅ*/
-					 n=deleteStu(stu,n,s);   /*µ÷ÓÃº¯ÊıÉ¾³ıÖ¸¶¨Ñ§ºÅµÄÑ§Éú¼ÇÂ¼*/
+					 scanf("%ld",&s.num);  /*¶ÁÈëÒ»¸ö´ıÉ¾³ıµÄÇòÔ±ÇòÒÂºÅÂë*/
+					 n=deletePla(stu,n,s);   /*µ÷ÓÃº¯ÊıÉ¾³ıÖ¸¶¨ÇòÒÂºÅÂëµÄÇòÔ±¼ÇÂ¼*/
 					 break;
 			   case 3:  printf("Input the number modified\n");
-					 scanf("%ld",&s.num);  /*¶ÁÈëÒ»¸ö´ıĞŞ¸ÄµÄÑ§ÉúÑ§ºÅ*/
-				      t=searchStu(stu,n,s,1,find) ; /*µ÷ÓÃº¯Êı²éÕÒÖ¸¶¨Ñ§ºÅµÄÑ§Éú¼ÇÂ¼*/
-				      if (t)                 /*Èç¹û¸ÃÑ§ºÅµÄ¼ÇÂ¼´æÔÚ*/
+					 scanf("%ld",&s.num);  /*¶ÁÈëÒ»¸ö´ıĞŞ¸ÄµÄÇòÔ±ÇòÒÂºÅÂë*/
+				      t=searchPla(pla,n,s,1,find) ; /*µ÷ÓÃº¯Êı²éÕÒÖ¸¶¨ÇòÒÂºÅÂëµÄÇòÔ±¼ÇÂ¼*/
+				      if (t)                 /*Èç¹û¸ÃÇòÒÂºÅÂëµÄ¼ÇÂ¼´æÔÚ*/
 					 {
-						  readStu(&s,1);   /*¶ÁÈëÒ»ÌõÍêÕûµÄÑ§Éú¼ÇÂ¼ĞÅÏ¢*/
+						  readPla(&s,1);   /*¶ÁÈëÒ»ÌõÍêÕûµÄÇòÔ±¼ÇÂ¼ĞÅÏ¢*/
 					      stu[find[0]]=s;    /*½«¸Õ¶ÁÈëµÄ¼ÇÂ¼¸³Öµ¸øĞèÒªĞŞ¸ÄµÄÊı×é¼ÇÂ¼*/ 					 
 					  }					 
-					 else                 /*Èç¹û¸ÃÑ§ºÅµÄ¼ÇÂ¼²»´æÔÚ*/ 
- printf("this student is not in,can not be modified.\n"); /*Êä³öÌáÊ¾ĞÅÏ¢*/
+					 else                 /*Èç¹û¸ÃÇòÒÂºÅÂëµÄ¼ÇÂ¼²»´æÔÚ*/ 
+ printf("this player is not in,can not be modified.\n"); /*Êä³öÌáÊ¾ĞÅÏ¢*/
 					 break;
 			    case 0: break;
 		    }
@@ -86,58 +84,56 @@ printf("choose one operation you want to do:\n");
 return n;                             /*·µ»Øµ±Ç°²Ù×÷½áÊøºóµÄÊµ¼Ê¼ÇÂ¼ÌõÊı*/
 }
 
-void scoreManage(Student stu[],int n)          /*¸Ãº¯ÊıÍê³ÉÑ§Éú³É¼¨¹ÜÀí¹¦ÄÜ*/
+void scoreManage(Player pla[],int n)          /*¸Ãº¯ÊıÍê³ÉÇòÔ±Êı¾İ¹ÜÀí¹¦ÄÜ*/
 {  
 	int choice;
 	do
 	{
 		menuScore( );                        /*ÏÔÊ¾¶ÔÓ¦µÄ¶ş¼¶²Ëµ¥*/
 		printf("choose one operation you want to do:\n");
-		scanf("%d",&choice);	                 /*¶ÁÈë¶ş¼¶Ñ¡Ïî*/
+		scanf("%2d",&choice);	                 /*¶ÁÈë¶ş¼¶Ñ¡Ïî*/
 		switch(choice)
 		{
-			case 1:   calcuTotal(stu,n);         /*ÇóËùÓĞÑ§ÉúµÄ×Ü·Ö*/
+			case 1:   calcuTotal(stu,n);         /*ÇóËùÓĞÇòÔ±µÄ×ÜµÃ·Ö*/
 					  break;
-			case 2:   calcuRank(stu,n);         /*¸ù¾İËùÓĞÑ§ÉúµÄ×Ü·ÖÅÅÃû´Î*/
+			case 2:   calcuRank(stu,n);         /*¸ù¾İËùÓĞÇòÔ±µÄ×ÜµÃ·ÖÅÅÃû´Î*/
 				      break;		
 			case 0:   break;
 		}
 	}while(choice);
 }
 
-void printMarkCourse(char *s,double m[3][3],int k)   /*´òÓ¡·ÖÊıÍ¨ÓÃº¯Êı£¬±»countManage µ÷ÓÃ*/
-{                 /*ĞÎÊ½²ÎÊık´ú±íÊä³ö²»Í¬µÄÄÚÈİ£¬0¡¢1¡¢2·Ö±ğ¶ÔÓ¦×î¸ß·Ö¡¢×îµÍ·Ö¡¢Æ½¾ù·Ö*/
+void printMarkCourse(char *s,double m[5][2],int k)   /*´òÓ¡·ÖÊıÍ¨ÓÃº¯Êı£¬±»countManage µ÷ÓÃ*/
+{                 /*ĞÎÊ½²ÎÊık´ú±íÊä³ö²»Í¬µÄÄÚÈİ£¬0¡¢1·Ö±ğ¶ÔÓ¦×î¸ß·Ö¡¢×îµÍ·Ö*/
 int i;
     printf(s);                                  /*ÕâÀïµÄs´«ÈëµÄÊÇÊä³ö·ÖÊıµÄÌáÊ¾ĞÅÏ¢*/
-    for (i=0;i<3;i++)                           /*i¿ØÖÆÄÄÒ»ÃÅ¿Î*/
+    for (i=0;i<5;i++)                           /*i¿ØÖÆÄÄÒ»³¡±ÈÈü*/
 		  printf("%10.2lf",m[i][k]);
 	   printf("\n");
 }
 
-void countManage(Student stu[],int n)               /*¸Ãº¯ÊıÍê³É¿¼ÊÔ³É¼¨Í³¼Æ¹¦ÄÜ*/
+void countManage(Player pla[],int n)               /*¸Ãº¯ÊıÍê³É±ÈÈüÊı¾İÍ³¼Æ¹¦ÄÜ*/
 {
 		int choice;
-		double mark[3][3];
+		double mark[5][2];
 		do
 		{
 			menuCount( );                        /*ÏÔÊ¾¶ÔÓ¦µÄ¶ş¼¶²Ëµ¥*/
-			calcuMark(mark,stu,n);                 /*µ÷ÓÃ´Ëº¯ÊıÇóÈıÃÅ¿ÎµÄ×î¸ß¡¢×îµÍ¡¢Æ½¾ùÖµ*/
+			calcuMark(mark,pla,n);                 /*µ÷ÓÃ´Ëº¯ÊıÇóÎå³¡±ÈÈüµÄ×î¸ß¡¢×îµÍ·Ö*/
 			printf("choose one operation you want to do:\n");
 			scanf("%d",&choice);
 			switch(choice)
 			{
-				case 1:   printMarkCourse("ÈıÃÅ¿ÎµÄ×î¸ß·Ö·Ö±ğÊÇ:\n",mark,0);  /*Êä³ö×î¸ß·Ö*/
+				case 1:   printMarkCourse("Îå³¡±ÈÈüµÄ×î¸ß·Ö·Ö±ğÊÇ:\n",mark,0);  /*Êä³ö×î¸ß·Ö*/
 				      break;
-				case 2:   printMarkCourse("ÈıÃÅ¿ÎµÄ×îµÍ·Ö·Ö±ğÊÇ:\n",mark,1);  /*Êä³ö×îµÍ·Ö*/
-				      break;
-				case 3:   printMarkCourse("ÈıÃÅ¿ÎµÄÆ½¾ù·Ö·Ö±ğÊÇ:\n",mark,2);  /*Êä³öÆ½¾ù·Ö*/
+				case 2:   printMarkCourse("Îå³¡±ÈÈüµÄ×îµÍ·Ö·Ö±ğÊÇ:\n",mark,1);  /*Êä³ö×îµÍ·Ö*/
 				      break;
 				case 0:   break;
 			}
 		}while (choice);
 }
 
-void searchManage(Student stu[],int n)               /*¸Ãº¯ÊıÍê³É¸ù¾İÌõ¼ş²éÑ¯¹¦ÄÜ*/
+void searchManage(Player pla[],int n)               /*¸Ãº¯ÊıÍê³É¸ù¾İÌõ¼ş²éÑ¯¹¦ÄÜ*/
 {
     int i,choice,findnum,f[NUM];
 Student s;
@@ -148,25 +144,25 @@ Student s;
 			scanf("%d",&choice);
 			switch(choice)
 			{
-				case 1:   printf("Input a student\'s num will be searched:\n");
-				      scanf("%ld",&s.num);         /*ÊäÈë´ı²éÑ¯Ñ§ÉúµÄÑ§ºÅ*/
+				case 1:   printf("Input a player\'s num will be searched:\n");
+				      scanf("%2d",&s.num);         /*ÊäÈë´ı²éÑ¯ÇòÔ±µÄÇòÒÂºÅÂë*/
 					  break;
-				case 2:   printf("Input a student\'s name will be searched:\n");
-				      scanf("%s",s.name);	          /*ÊäÈë´ı²éÑ¯Ñ§ÉúµÄĞÕÃû*/		  
+				case 2:   printf("Input a player\'s name will be searched:\n");
+				      scanf("%8s",s.name);	          /*ÊäÈë´ı²éÑ¯ÇòÔ±µÄĞÕÃû*/		  
 				      break;   
 				case 3:   printf("Input a rank will be searched:\n");
-				      scanf("%d",&s.rank);          /*ÊäÈë´ı²éÑ¯Ñ§ÉúµÄÃû´Î*/
+				      scanf("%2d",&s.rank);          /*ÊäÈë´ı²éÑ¯ÇòÔ±µÄÃû´Î*/
 					  break;
 				case 0:   break;
 			}
-		 	if (choice>=1&&choice<=3)
+		 	if (choice>=1&&choice<=2)
 			{ 
-				findnum=searchStu(stu,n,s,choice,f);    /*²éÕÒµÄ·ûºÏÌõ¼şÔªËØµÄÏÂ±ê´æÓÚfÊı×éÖĞ*/
+				findnum=searchPla(pla,n,s,choice,f);    /*²éÕÒµÄ·ûºÏÌõ¼şÔªËØµÄÏÂ±ê´æÓÚfÊı×éÖĞ*/
 				if (findnum)				     /*Èç¹û²éÕÒ³É¹¦*/
 				{
 			   		 printHead( );                  /*´òÓ¡±íÍ·*/
 					 for (i=0;i<findnum;i++)         /*Ñ­»·¿ØÖÆfÊı×éµÄÏÂ±ê*/
-	      	 printStu(&stu[f[i]],1);      /*Ã¿´ÎÊä³öÒ»Ìõ¼ÇÂ¼*/
+	      	 printPla(&pla[f[i]],1);      /*Ã¿´ÎÊä³öÒ»Ìõ¼ÇÂ¼*/
 				}
 		    		else
 			    	    printf("this record does not exist!\n"); /*Èç¹û²éÕÒ²»µ½ÔªËØ£¬ÔòÊä³öÌáÊ¾ĞÅÏ¢*/
@@ -174,21 +170,21 @@ Student s;
 	    }while (choice);
 }
 
-int runMain(Student stu[],int n,int choice)    /*Ö÷¿ØÄ£¿é£¬¶ÔÓ¦ÓÚÒ»¼¶²Ëµ¥ÆäÏÂ¸÷¹¦ÄÜÑ¡ÔñÖ´ĞĞ*/
+int runMain(Player pla[],int n,int choice)    /*Ö÷¿ØÄ£¿é£¬¶ÔÓ¦ÓÚÒ»¼¶²Ëµ¥ÆäÏÂ¸÷¹¦ÄÜÑ¡ÔñÖ´ĞĞ*/
 {
 		switch(choice)
 		{
 			case 1: printHead( );           /* 1. ÏÔÊ¾»ù±¾ĞÅÏ¢*/
-				 sortStu(stu,n,1);         /*°´Ñ§ºÅÓÉĞ¡µ½´óµÄË³ĞòÅÅĞò¼ÇÂ¼*/ 
-          	 printStu(stu,n);          /*°´Ñ§ºÅÓÉĞ¡µ½´óµÄË³ĞòÊä³öËùÓĞ¼ÇÂ¼*/
+				 sortPla(pla,n,1);         /*°´ÇòÒÂºÅÂëÓÉĞ¡µ½´óµÄË³ĞòÅÅĞò¼ÇÂ¼*/ 
+          	 printStu(pla,n);          /*°´ÇòÒÂºÅÂëÓÉĞ¡µ½´óµÄË³ĞòÊä³öËùÓĞ¼ÇÂ¼*/
 					break;
-			case 2: n=baseManage(stu,n);    /* 2. »ù±¾ĞÅÏ¢¹ÜÀí*/
+			case 2: n=baseManage(pla,n);    /* 2. »ù±¾ĞÅÏ¢¹ÜÀí*/
 			   	     break;
-			case 3: scoreManage(stu,n);     /* 3. Ñ§Éú³É¼¨¹ÜÀí*/
+			case 3: scoreManage(pla,n);     /* 3. ÇòÔ±Êı¾İ¹ÜÀí*/
 					break;
-			case 4: countManage(stu,n);     /* 4. ¿¼ÊÔ³É¼¨Í³¼Æ*/
+			case 4: countManage(pla,n);     /* 4. ±ÈÈüµÃ·ÖÍ³¼Æ*/
 					break;
-			case 5: searchManage(stu,n);     /* 5. ¸ù¾İÌõ¼ş²éÑ¯*/
+			case 5: searchManage(pla,n);     /* 5. ¸ù¾İÌõ¼ş²éÑ¯*/
 				     break;
           case 0: break;
 		}
@@ -197,12 +193,12 @@ int runMain(Student stu[],int n,int choice)    /*Ö÷¿ØÄ£¿é£¬¶ÔÓ¦ÓÚÒ»¼¶²Ëµ¥ÆäÏÂ¸÷¹
 
 int main( )
 {
-		Student stu[NUM];                /*¶¨ÒåÊµ²ÎÒ»Î¬Êı×é´æ´¢Ñ§Éú¼ÇÂ¼*/
+		Player pla[NUM];                /*¶¨ÒåÊµ²ÎÒ»Î¬Êı×é´æ´¢ÇòÔ±¼ÇÂ¼*/
       int choice,n;
-	 n=readFile(stu);                  /*Ê×ÏÈ¶ÁÈ¡ÎÄ¼ş£¬¼ÇÂ¼ÌõÊı·µ»Ø¸³Öµ¸øn*/
+	 n=readFile(pla);                  /*Ê×ÏÈ¶ÁÈ¡ÎÄ¼ş£¬¼ÇÂ¼ÌõÊı·µ»Ø¸³Öµ¸øn*/
 	 if (!n)                          /*Èç¹ûÔ­À´µÄÎÄ¼şÎª¿Õ*/
 	     {
-		    n=createFile(stu);              /*ÔòÊ×ÏÈÒª½¨Á¢ÎÄ¼ş£¬´Ó¼üÅÌÉÏ¶ÁÈëÒ»ÏµÁĞ¼ÇÂ¼´æÓÚÎÄ¼ş*/
+		    n=createFile(pla);              /*ÔòÊ×ÏÈÒª½¨Á¢ÎÄ¼ş£¬´Ó¼üÅÌÉÏ¶ÁÈëÒ»ÏµÁĞ¼ÇÂ¼´æÓÚÎÄ¼ş*/
 }	 	 
 	do
 	     {
@@ -210,11 +206,11 @@ int main( )
 	         printf("Please input your choice: ");
 	         scanf("%d",&choice);
 	         if (choice>=0&&choice<=5)
-	              n=runMain(stu,n,choice);    /*Í¨¹ıµ÷ÓÃ´Ëº¯Êı½øĞĞÒ»¼¶¹¦ÄÜÏîµÄÑ¡ÔñÖ´ĞĞ*/
+	              n=runMain(pla,n,choice);    /*Í¨¹ıµ÷ÓÃ´Ëº¯Êı½øĞĞÒ»¼¶¹¦ÄÜÏîµÄÑ¡ÔñÖ´ĞĞ*/
 	         else 
 		          printf("error input,please input your choice again!\n");
 	} while (choice);
-	sortStu(stu,n,1);                   /*´æÈëÎÄ¼şÇ°°´Ñ§ºÅÓÉĞ¡µ½´óÅÅĞò*/ 
-	     saveFile(stu,n);                   /*½«½á¹û´æÈëÎÄ¼ş*/
+	sortPla(pla,n,1);                   /*´æÈëÎÄ¼şÇ°°´ÇòÒÂºÅÂëÓÉĞ¡µ½´óÅÅĞò*/ 
+	     saveFile(pla,n);                   /*½«½á¹û´æÈëÎÄ¼ş*/
       return 0;
 }
